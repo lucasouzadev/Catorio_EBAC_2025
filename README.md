@@ -26,29 +26,14 @@ Projeto nascido e criado na fundação EBAC, dentro do curso: TI do Zero ao Pro,
 
 ## Ilustração:
 
-- `Menu inicial`: 🪟
+\- `Menu inicial`: 🪟
 ![Menu inicial](ilustração/Menu.png)
-
-
-
-
 - `Função de Registro` ✒️
 ![Menu de registro](ilustração/registro.png)
-
-
-
-
 - `Função de Consulta` 📖
 ![Menu de consulta](ilustração/consulta.png)
-
-
-
-
 - `Função de Delete` 🗑️
 ![Menu de delete](ilustração/delete.png)
-
-
-
 
 ## Evolutivas 💻💾
 - Implementação de persistência de dados em banco de dados.
