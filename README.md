@@ -12,10 +12,7 @@ Este projeto é um sistema simples para gerenciar usuários, permitindo o cadast
 - Exclusão de usuários.
 
 ## Tecnologias Utilizadas
-- **PHP** (para o back-end)
-- **MySQL** (para o banco de dados)
-- **HTML/CSS** (para a interface)
-- **JavaScript** (para interações no front-end)
+- **C/PHP** (para o back-end)
 
 ## Instalação
 1. Clone o repositório:
