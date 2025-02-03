@@ -11,8 +11,22 @@ Este projeto é um sistema simples para gerenciar usuários, permitindo o cadast
 - Edição de dados do usuário.
 - Exclusão de usuários.
 
+## Armazenamento
+- Registrados.txt: Responsavel por caputurar as infirmações registradas e enfileirar, dando ao CLiente um pequeno bando de dados
+- Recentes.txt: Responsável por trazer as informações dos registrados, criando uma lista de consulta e impedindo que a função "Deletar" apague mais do que o necessário.
+
 ## Tecnologias Utilizadas
 - **C/PHP** (para o back-end)
+
+## Evolutivas
+- Implementação de persistência de dados em banco de dados.
+- Melhorias na interface do usuário, como um sistema gráfico (GUI).
+- Funcionalidades adicionais, como atualização de dados de usuários ou exportação de registros.
+- Tratativa de erros e Monitoria de usuários.
+- Backup de Dados e armazenamento em nuvem.
+
+## Contato
+* 📩 Email: juiceluqi@gmail.com
 
 ## Instalação
 1. Clone o repositório:
