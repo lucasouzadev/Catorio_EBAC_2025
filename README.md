@@ -16,7 +16,13 @@ Este projeto é um sistema simples para gerenciar usuários, permitindo o cadast
 - Recentes.txt: Responsável por trazer as informações dos registrados, criando uma lista de consulta e impedindo que a função "Deletar" apague mais do que o necessário.
 
 ## Tecnologias Utilizadas
-- **C/PHP** (para o back-end)
+- **C/PHP** (para o back-end).
+
+## Público-alvo:
+
+- Desenvolvedores do sistema.
+- Administradores do sistema.
+- Equipe de suporte técnico.
 
 ## Evolutivas
 - Implementação de persistência de dados em banco de dados.
