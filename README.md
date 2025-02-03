@@ -17,5 +17,5 @@ Este projeto é um sistema simples para gerenciar usuários, permitindo o cadast
 ## Instalação
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   git clone https://github.com/juiceluqi/Catorio_EBAC---2025.git
 
