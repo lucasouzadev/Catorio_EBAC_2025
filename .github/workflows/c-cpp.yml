@@ -1,20 +1,25 @@
 name: Build and Test Cartório C Project
 
-on: [push, pull_request]  # Executa o workflow em cada push ou pull request
+on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Utiliza uma máquina virtual com Ubuntu
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout do código
-        uses: actions/checkout@v3  # Baixa o código do repositório
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+
+      - name: Listar arquivos no diretório (Debug)
+        run: ls -R
 
       - name: Instalar Dependências
-        run: sudo apt update && sudo apt install -y gcc  # Instala GCC para compilação
+        run: sudo apt update && sudo apt install -y gcc
 
       - name: Compilar o Programa
-        run: gcc -o cartorio main.c -Wall -Wextra -pedantic  # Ajuste conforme necessário
+        run: gcc -o cartorio main.c -Wall -Wextra -pedantic
 
       - name: Testar Execução
         run: |
@@ -24,4 +29,4 @@ jobs:
           123456
           5
           EOF
-        timeout-minutes: 1  # Define um tempo máximo para execução
+        timeout-minutes: 1
