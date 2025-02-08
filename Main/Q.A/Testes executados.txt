@@ -1,0 +1,62 @@
+Linha de Testes do Sistema de Registro de Nomes da EBAC.
+
+🔑 Login:
+
+	Acesso de admin está correto.
+	 - Quando a senha "admin" foi digitada, o sistema concedeu acesso ao menu.
+
+	Recusa de acesso está correta para qualquer senha incorreta.
+	 - O sistema negou corretamente o acesso ao digitar senhas incorretas.
+
+📌 Função Menu:
+
+	Criada corretamente, a instância iniciou e encerrou-se conforme esperado.
+	 - O menu aparece corretamente e retorna ao usuário após cada ação.
+
+	Chamada de todas as funções (inserir, consultar, deletar) corretamente.
+	 - Cada opção foi testada e direcionou corretamente para sua função correspondente.
+
+📝 Função Inserir
+
+	Criação de banco de dados está correta.
+	 - Se registrados.txt não existir, o sistema cria corretamente o arquivo.
+
+	Inserção de CPF, Nome, Sobrenome e Cargo, ok.
+	 - Todos os campos foram inseridos corretamente no formato esperado.
+
+	Encerramento de função e retorno ao menu, ok.
+	- Após o cadastro, o sistema retorna ao menu automaticamente.
+
+🔎 Função Consultar
+
+	Solicitação de CPF, ok.
+	 - O sistema solicita corretamente o CPF antes da consulta.
+
+	Consulta ao banco, ok.
+	 - O sistema busca os dados corretamente no registrados.txt.
+
+	Retorno ao usuário, ok.
+	 - Quando o CPF é encontrado, os dados são exibidos corretamente.
+	 - Quando o CPF não é encontrado, o sistema sugere o cadastro.
+
+	Retorno ao Menu, ok.
+	 - Após a consulta, o usuário retorna ao menu sem erros.
+
+🗑️ Função Deletar
+
+	Solicitação de CPF, ok.
+	 - O sistema pede um CPF antes de tentar a exclusão.
+
+	Deleção no banco, ok.
+	 - O CPF informado é removido corretamente do registrados.txt e recentes.txt.
+
+	Confirmação antes de deletar, ok.
+	 - O sistema pede confirmação antes de excluir os dados.
+
+📌 Certificação do Projeto:
+
+Após análise do software, certifico que o projeto de registro de nomes da EBAC atende às premissas do cliente, garantindo:
+
+✔ Inserção de dados
+✔ Atualização de dados
+✔ Exclusão de dados

@@ -1,0 +1,111 @@
+✅ Pontos Positivos
+
+Estrutura Bem Definida:
+
+O código está bem organizado e dividido em funções específicas (registro, consulta, deletar etc.)
+Há um menu intuitivo para navegação entre as opções.
+
+Uso de Arquivos:
+
+O sistema manipula arquivos corretamente (registrados.txt, recentes.txt) para armazenar e recuperar dados.
+O histórico dos 5 últimos registros é mantido e atualizado corretamente.
+
+Validações de Entrada:
+
+O código impede que o usuário digite valores inválidos em alguns lugares (ex: opção do menu).
+A função "confirmaAcao" permite que o usuário cancele ações, o que melhora a usabilidade.
+
+Tratamento de Senha:
+
+A senha de administrador é validada antes de permitir acesso às funções do sistema.
+
+
+
+⚠️ Melhorias e Ajustes
+
+ - Verificação de Abertura de Arquivo:
+
+Nem sempre há verificação se "fopen" realmente conseguiu abrir o arquivo.
+
+Exemplo:
+
+"FILE *recentFile = fopen("recentes.txt", "r");".
+
+Problema: Se o arquivo "recentes.txt" não existir, "fopen" retornará NULL, e "fgets" tentará ler um ponteiro inválido, causando erro.
+
+Solução: Sempre verificar "if(recentFile == NULL) { return 1; }" antes de operar no arquivo.
+
+
+ - Uso de system("pause") e system("cls"):
+
+Esses comandos são específicos do Windows.
+Para sistemas UNIX/Linux/Mac, isso pode causar problemas.
+
+Solução: Substituir "system("pause")" por algo mais genérico como:
+
+printf("Pressione Enter para continuar...\n");
+getchar();
+getchar();
+
+ - Uso de sleep(3):
+
+"sleep()" precisa da biblioteca <unistd.h> em sistemas UNIX.
+No Windows, seria "Sleep(3000);" (precisa de <windows.h>).
+
+Alternativa mais compatível:
+
+#ifdef _WIN32
+    Sleep(3000);
+#else
+    sleep(3);
+#endif
+
+
+ - Uso de strcpy e strcat sem Limite:
+
+Pode causar buffer overflow se as "strings" forem muito grandes.
+
+Solução: Usar "strncpy()" em vez de "strcpy()" e "snprintf()" para formatação.
+
+
+ - Uso de scanf("%s", cpf):
+
+scanf("%s", cpf); pode ultrapassar o tamanho do buffer, causando overflow de memória.
+
+Solução: "scanf("%39s", cpf);"
+
+Isso limita a entrada a 39 caracteres (o buffer tem 40).
+Remover "system("pause")" e Melhorar Mensagens de Erro.
+
+No lugar de "system("pause")", usar "getchar();" após exibir mensagens de erro.
+
+
+🛑 Possíveis Problemas Críticos
+
+ - Comparação de Strings (Senha)
+
+char senhadigitada[]="a";
+...
+comparacao = strcmp(senhadigitada, "admin");
+
+Erro: "senhadigitada" é uma "string" vazia "a", e "scanf("%s", senhadigitada);" pode não capturar corretamente se o usuário der "Enter" direto.
+
+Solução: Definir char senhadigitada[20]; para evitar problemas de buffer.
+
+
+ - Consulta de Usuário Não Retorna Todos os Registros
+
+O código tenta limitar a consulta aos últimos 5 registros, mas "registrados.txt" pode ter mais de 5 registros.
+Se um usuário mais antigo for consultado, ele nunca será encontrado.
+
+ - Confirmação de Deleção (Case-Sensitive)
+
+"if (strcasecmp(resposta, "Sim") == 0)"
+
+Problema: "strcasecmp()" não é padrão ANSI C e pode não funcionar em todos os compiladores.
+Solução: Converter resposta para minúsculas antes de comparar manualmente.
+
+
+📌 Conclusão
+
+Código bem estruturado, mas precisa de melhorias na manipulação de "strings", arquivos e validações de entrada.
