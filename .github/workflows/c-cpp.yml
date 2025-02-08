@@ -19,7 +19,7 @@ jobs:
         run: sudo apt update && sudo apt install -y gcc
 
       - name: Compilar o Programa
-        run: gcc -o cartorio main.c -Wall -Wextra -pedantic
+        run: gcc -o cartorio Main/cartorio_.c -Wall -Wextra -pedantic
 
       - name: Testar Execução
         run: |
